@@ -1,0 +1,15 @@
+<div class="my-14">
+    <h2 class="openSans text-2xl mb-12">Projects</h2>
+    <div>
+    <div class="flex gap-3 flex-wrap justify-between" >
+        <div class="relative" *ngFor="let project of projects">
+            <div class="bg-black px-3 py-1 absolute top-0 left-0 text-white  font-medium "><p class="">{{project.name}}</p></div>
+            <img src={{project.imageUrl}} alt="" class="w-[287px]
+            ">
+            <!-- transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 -->
+        </div>
+    </div>
+    </div>    
+ 
+
+</div>

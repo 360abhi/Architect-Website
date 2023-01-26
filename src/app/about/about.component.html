@@ -1,0 +1,21 @@
+<div class="my-14">
+    <h2 class="openSans text-2xl mb-8">About</h2>
+    <p class="text-base mb-14">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias quasi debitis illo?
+        Animi temporibus eligendi dicta harum maiores, quos itaque id possimus expedita inventore ducimus earum ipsum
+        dolor? Corrupti, et! Assumenda ipsa cupiditate, quam odit eaque possimus expedita vero quae delectus commodi
+        quod. Fugiat, maiores sapiente consectetur sunt nostrum tempora ex voluptas quisquam nam asperiores tenetur
+        veniam quos eveniet tempore quam porro animi earum praesentium ullam? Et illum dolorem distinctio!</p>
+
+    <div class="flex flex-wrap gap-3">
+        <div *ngFor="let about of aboutobject" class="w-[287px]">
+            <div class="">
+                <img src={{about.imageUrl}} alt="" class="grayscale  h-[200px] w-full">
+            </div>
+            <h2 class="font-semibold text-lg my-2">{{about.name}}</h2>
+            <h3 class="text-gray-600 mb-2">{{about.position}}</h3>
+            <p class="mb-2">{{about.about}}</p>
+            <button class="py-2 px-3 bg-gray-200 hover:bg-gray-400 w-full text-sm">Contact</button>
+        </div>
+    </div>
+
+</div>
