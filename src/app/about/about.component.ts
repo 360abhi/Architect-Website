@@ -15,18 +15,31 @@ export class AboutComponent {
   isSelected : boolean = false
   name:string = ""
   position:string = "" 
+  
+  mygrayscale = {
+    'grayscale' : true
+  }
+  graytoggle : boolean = true;
+
+  original:string = "original"
 
   constructor(aboutservice: Aboutservice){
     this.aboutobject = aboutservice.getAbouts();
   }
 
-  contacted(name : any, position:any,event: Event){
+  contacted(name : any, position:any){
     this.isSelected = true;
-    // this.name  = name.ta
-    // this.position = "" 
     this.name = name.innerText;
     this.position = position.innerText;
+    
+  }
 
+  changeBG(){
+    this.graytoggle = !this.graytoggle
+    this.original = this.graytoggle ? 'original' : 'grayscale'
+    this.mygrayscale = {
+      'grayscale' : this.graytoggle
+    }
   }
 
 }

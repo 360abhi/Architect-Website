@@ -9,19 +9,28 @@
     <div class="flex flex-wrap gap-3">
         <div *ngFor="let about of aboutobject" class="w-[287px]">
             <div class="">
-                <img src={{about.imageUrl}} alt="" class="grayscale  h-[200px] w-full">
+                <img src={{about.imageUrl}} alt="" class="h-[200px] w-full"
+                [ngClass]="mygrayscale">
             </div>
             <h2 #name class="font-semibold text-lg my-2">{{about.name}}</h2>
-            <h3  #position class="text-gray-600 mb-2">{{about.position}}</h3>
+            <h3 #position class="text-gray-600 mb-2">{{about.position}}</h3>
             <p class="mb-2">{{about.about}}</p>
-            <button class="py-2 px-3 bg-gray-200 hover:bg-gray-400 w-full text-sm"  (click)="contacted(name, position,$event)">Contact</button>
+            <button
+                class="py-2 px-4 bg-transparent font-semibold w-full border bg-gray-300 hover:bg-gray-400 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0"
+                (click)="contacted(name, position)">Contact</button>
+
         </div>
     </div>
     <div class="bg-indigo-900 text-center py-4 lg:px-4 mt-3" *ngIf="isSelected">
-        <div class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
-          <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">New</span>
-          <span class="font-semibold mr-2 text-left flex-auto">You have selected {{name}} who is currently {{position}}</span>
-          <svg class="fill-current opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
+        <div class="p-2 bg-gray-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
+            role="alert">
+            <span class="flex rounded-full bg-indigo-800 uppercase px-2 py-1 text-xs font-bold mr-3"></span>
+            <span class="font-semibold mr-2 text-left flex-auto">You have selected {{name}} who is currently
+                {{position}}</span>
+            <svg class="fill-current opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" />
+            </svg>
         </div>
-      </div>
+    </div>
+    <button class="py-2 px-4 mt-5 bg-transparent font-semibold border border-black hover:bg-gray-400 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0" (click)="changeBG()">Switch to {{original}}</button>
 </div>
