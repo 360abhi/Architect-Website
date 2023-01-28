@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Aboutservice } from '../Services/about.service';
+import { Grayscale } from '../Services/grayscale.service';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class AboutComponent {
 
   original:string = "original"
 
-  constructor(aboutservice: Aboutservice){
+  constructor(aboutservice: Aboutservice, public grayservice: Grayscale){
     this.aboutobject = aboutservice.getAbouts();
   }
 
@@ -34,10 +35,15 @@ export class AboutComponent {
     
   }
 
+  
+
   changeBG() : void{
     this.graytoggle = !this.graytoggle
     this.original = this.graytoggle ? 'original' : 'grayscale'
     this.mygrayscale = {
+      'grayscale' : this.graytoggle
+    }
+    this.grayservice.myData = {
       'grayscale' : this.graytoggle
     }
   }

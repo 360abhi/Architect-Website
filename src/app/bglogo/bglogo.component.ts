@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Grayscale } from '../Services/grayscale.service';
 
 @Component({
   selector: 'app-bglogo',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class BglogoComponent {
 
+  constructor(public grayservice : Grayscale) {}
+
+  
 }

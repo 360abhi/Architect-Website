@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { Aboutservice } from './Services/about.service';
 import { ContactComponent } from './contact/contact.component';
 import { FootComponent } from './foot/foot.component';
+import { Grayscale } from './Services/grayscale.service';
 
 @NgModule({
   declarations: [

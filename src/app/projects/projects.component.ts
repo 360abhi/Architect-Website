@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Grayscale } from '../Services/grayscale.service';
 import { Projectservice } from '../Services/project.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class ProjectsComponent {
   projects;
   
 
-  constructor(projectservice: Projectservice){
+  constructor(projectservice: Projectservice, public grayservice : Grayscale){
     this.projects = projectservice.getProjects();
   }
 

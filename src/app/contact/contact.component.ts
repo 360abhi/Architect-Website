@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Grayscale } from '../Services/grayscale.service';
 
 @Component({
   selector: 'app-contact',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
+
+  constructor(public grayservice : Grayscale) {}
 
   isClicked: boolean = false;
 
