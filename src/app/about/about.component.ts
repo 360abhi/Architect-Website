@@ -27,14 +27,14 @@ export class AboutComponent {
     this.aboutobject = aboutservice.getAbouts();
   }
 
-  contacted(name : any, position:any){
+  contacted(name : any, position:any) : void{
     this.isSelected = true;
     this.name = name.innerText;
     this.position = position.innerText;
     
   }
 
-  changeBG(){
+  changeBG() : void{
     this.graytoggle = !this.graytoggle
     this.original = this.graytoggle ? 'original' : 'grayscale'
     this.mygrayscale = {

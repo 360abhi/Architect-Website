@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ContactComponent {
 
+  isClicked: boolean = false;
+
+  btnClicked() : void {
+    this.isClicked = !this.isClicked;
+  }
+
 }
