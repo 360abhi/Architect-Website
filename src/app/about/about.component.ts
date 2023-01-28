@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Aboutservice } from '../Services/about.service';
+import { ContactData } from '../Services/contactdata.service';
 import { Grayscale } from '../Services/grayscale.service';
 
 
@@ -16,6 +17,8 @@ export class AboutComponent {
   isSelected : boolean = false
   name:string = ""
   position:string = "" 
+  email: string = ""
+  description : string = ""
   
   mygrayscale = {
     'grayscale' : true
@@ -24,15 +27,26 @@ export class AboutComponent {
 
   original:string = "original"
 
-  constructor(aboutservice: Aboutservice, public grayservice: Grayscale){
+  constructor(aboutservice: Aboutservice, public grayservice: Grayscale, public contactdata: ContactData){
     this.aboutobject = aboutservice.getAbouts();
   }
 
-  contacted(name : any, position:any) : void{
+  contacted(name : any, position:any,email:any, description:any) : void{
     this.isSelected = true;
     this.name = name.innerText;
     this.position = position.innerText;
-    
+    this.email = email.innerText;
+    this.description = description.innerText;
+  }
+
+  addToForm(name: String, position: String,email: any,description:any ) : void {
+
+    this.contactdata.name = name;
+    this.contactdata.position = position;
+    this.contactdata.isDone = true;
+    this.contactdata.email = email;
+    this.contactdata.description = description;
+
   }
 
   

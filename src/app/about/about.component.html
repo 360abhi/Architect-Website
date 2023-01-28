@@ -9,15 +9,15 @@
     <div class="flex flex-wrap gap-3">
         <div *ngFor="let about of aboutobject" class="w-[287px]">
             <div class="">
-                <img src={{about.imageUrl}} alt="" class="h-[200px] w-full"
-                [ngClass]="mygrayscale">
+                <img src={{about.imageUrl}} alt="" class="h-[200px] w-full" [ngClass]="mygrayscale">
             </div>
-            <h2 #name class="font-semibold text-lg my-2">{{about.name}}</h2>
-            <h3 #position class="text-gray-600 mb-2">{{about.position}}</h3>
-            <p class="mb-2">{{about.about}}</p>
+            <h2 #name class="font-semibold px-1 text-lg my-2">{{about.name}}</h2>
+            <h2 #mail class="font-semibold px-1 text-gray-600 my-2 text-sm">{{about.email}}</h2>
+            <h3 #position class="text-gray-600 px-1 mb-2">{{about.position}}</h3>
+            <p #description class="mb-2 px-1">{{about.about}}</p>
             <button
                 class="py-2 px-4 bg-transparent font-semibold w-full border bg-gray-300 hover:bg-gray-400 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0"
-                (click)="contacted(name, position)">Contact</button>
+                (click)="contacted(name, position,mail,description)">Contact</button>
 
         </div>
     </div>
@@ -26,11 +26,17 @@
             role="alert">
             <span class="flex rounded-full bg-indigo-800 uppercase px-2 py-1 text-xs font-bold mr-3"></span>
             <span class="font-semibold mr-2 text-left flex-auto">You have selected {{name}} who is currently
-                {{position}}</span>
+                {{position}} his email is {{email}}</span>
             <svg class="fill-current opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                 <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" />
             </svg>
         </div>
     </div>
-    <button class="py-2 px-4 mt-5 bg-transparent font-semibold border border-black hover:bg-gray-400 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0" (click)="changeBG()">Switch to {{original}}</button>
+    <button
+        class="py-2 px-4 mt-5 bg-transparent font-semibold border border-black hover:bg-gray-400 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0"
+        (click)="changeBG()">Switch to {{original}}</button>
+    <br>
+    <button *ngIf="isSelected"
+        class="py-2 px-4 mt-5 bg-transparent font-semibold border border-black hover:bg-gray-400 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0"
+        (click)="addToForm(name, position,email,description)">Add to Contact Form</button>
 </div>

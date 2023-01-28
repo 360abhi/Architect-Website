@@ -4,7 +4,7 @@
     <div class="flex gap-3 flex-wrap justify-between" >
         <div class="relative" *ngFor="let project of projects">
             <div class="bg-black px-3 py-1 absolute top-0 left-0 text-white  font-medium "><p class="">{{project.name}}</p></div>
-            <img src={{project.imageUrl}} alt="" [ngClass]="grayservice.myData" class="w-[287px] grayscale
+            <img src={{project.imageUrl}} alt="" class="w-[287px] 
             ">
             <!-- transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 -->
         </div>
