@@ -11,6 +11,14 @@ import { Aboutservice } from './Services/about.service';
 import { ContactComponent } from './contact/contact.component';
 import { FootComponent } from './foot/foot.component';
 import { Grayscale } from './Services/grayscale.service';
+import { RouterModule, Routes } from '@angular/router';
+
+// const appRoutes : Routes = [
+//   {path : "", component: AppComponent},
+//   {path : "contact", component : ContactComponent},
+//   {path : "about", component : AboutComponent},
+//   {path : "projects", component : ProjectsComponent},
+// ]
 
 @NgModule({
   declarations: [
@@ -24,7 +32,9 @@ import { Grayscale } from './Services/grayscale.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // RouterModule.forRoot(appRoutes)
+
   ],
   providers: [],
   bootstrap: [AppComponent]

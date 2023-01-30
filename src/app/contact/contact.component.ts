@@ -23,8 +23,4 @@ export class ContactComponent {
     email.value = this.contactdata.email;
     comment.value = this.contactdata.description;
   }
-
-  
-
-
 }
