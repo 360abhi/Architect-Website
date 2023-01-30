@@ -11,13 +11,13 @@
             <div class="">
                 <img src={{about.imageUrl}} alt="" class="h-[200px] w-full" [ngClass]="mygrayscale">
             </div>
-            <h2 #name class="font-semibold px-1 text-lg my-2">{{about.name}}</h2>
+            <h2 #myname class="font-semibold px-1 text-lg my-2">{{about.name}}</h2>
             <h2 #mail class="font-semibold px-1 text-gray-600 my-2 text-sm">{{about.email}}</h2>
             <h3 #position class="text-gray-600 px-1 mb-2">{{about.position}}</h3>
             <p #description class="mb-2 px-1">{{about.about}}</p>
             <button
                 class="py-2 px-4 bg-transparent font-semibold w-full border bg-gray-300 hover:bg-gray-400 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0"
-                (click)="contacted(name, position,mail,description)">Contact</button>
+                (click)="contacted(myname, position,mail,description)">Contact</button>
 
         </div>
     </div>
@@ -38,5 +38,5 @@
     <br>
     <button *ngIf="isSelected"
         class="py-2 px-4 mt-5 bg-transparent font-semibold border border-black hover:bg-gray-400 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0"
-        (click)="addToForm(name, position,email,description)">Add to Contact Form</button>
+        (click)="addToForm()">Add to Contact Form</button>
 </div>

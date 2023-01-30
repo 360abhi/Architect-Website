@@ -39,13 +39,13 @@ export class AboutComponent {
     this.description = description.innerText;
   }
 
-  addToForm(name: String, position: String,email: any,description:any ) : void {
+  addToForm() : void {
 
-    this.contactdata.name = name;
-    this.contactdata.position = position;
+    this.contactdata.name = this.name;
+    this.contactdata.position = this.position;
     this.contactdata.isDone = true;
-    this.contactdata.email = email;
-    this.contactdata.description = description;
+    this.contactdata.email = this.email;
+    this.contactdata.description = this.description;
 
   }
 
